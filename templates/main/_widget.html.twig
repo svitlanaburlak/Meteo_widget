@@ -1,0 +1,18 @@
+<!-- Sidebar (le widget) -->
+            <div class="col-3">
+                <!-- Code du widget -->
+                <div id="widget">
+                    <!-- Si ville sélectionnée -->
+                    <p><b>{{ widget_city.city }}</b></p>
+                    <p>{{ widget_city.date }}</p>
+                    {# doesnt work weather = gives error unexepcted name #}
+                    <p><img src="{{ asset('images/' ~ widget_city.weather ~ '.png') }}"></p>
+                    <p>{{ widget_city.min }}°C / {{ widget_city.max }}°C</p>
+                    <!-- Si ville non sélectionnée -->
+                    {% for messages in app.flashes %}
+                    {% for message in messages %}
+                        <div>{{ message }}</div>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>

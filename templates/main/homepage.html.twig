@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+    <!-- Minimal responsive + columns -->
+    <main class="container">
+        <div class="row">
+            <!-- Content (les pages) -->
+            <div class="col-9">
+
+                <h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+
+                {% for city_id, current_city in city_list %}
+                    <div class="item item--bg-{{ current_city.weather }}">
+                        <div class="item--city"><a href="{{ path('add_id', {id: city_id}) }}">{{ current_city['city'] }}</a></div>
+                        {# |date = filter of twig for date #}
+                    <div class="item--forecast">{{ current_city.date|date("d-m") }} : {{ current_city.min }}°C / {{ current_city.max }}°C</div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+            {% include('main/_widget.html.twig') %}
+        </div>
+    </main>
+{% endblock %}
