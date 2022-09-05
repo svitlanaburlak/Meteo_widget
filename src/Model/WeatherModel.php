@@ -5,9 +5,9 @@ namespace App\Model;
 class WeatherModel
 {
     /**
-     * Retourne le tableau de prévisions
+     * Return forecast array
      * 
-     * @return array Le tableau de prévisions
+     * @return array Forecast Array
      */
     public static function getWeatherData(): array
     {
@@ -15,11 +15,11 @@ class WeatherModel
     }
 
     /**
-     * Retourne une prévision selon son id
+     * Return forecast array with the given id
      * 
-     * @param int $index L'index de la prévision
+     * @param int $index forecast index
      * 
-     * @return null|array Null si non trouvé ou les infos de la prévision demandée
+     * @return null|array Null if the demanded forecast is not found
      */
     public static function getWeatherByCityIndex(int $index): ?array
     {
@@ -31,7 +31,7 @@ class WeatherModel
     }
 
     /**
-     * @var [][] Tableau de tableau des prévisions
+     * @var [][] Forecast Array
      */
     private static $weatherData = [
         [

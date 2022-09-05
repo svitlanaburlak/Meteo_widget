@@ -23,10 +23,8 @@ class MainController extends AbstractController {
         // $session->clear();
         $chosenCity = $session->get('chosen_city');
         
-        // require __DIR__ . '/../../generate.php';
         $cities = WeatherModel::getWeatherData();
 
-        // dd($cities);
         if(!$chosenCity) {
             $cityToDisplay = WeatherModel::getWeatherByCityIndex(mt_rand(0, count($cities) - 1));
             $this->addFlash('notice', 'Sélectionnez une ville dans la liste de gauche');
@@ -55,14 +53,13 @@ class MainController extends AbstractController {
 
         $cities = WeatherModel::getWeatherData();
 
-        // dd($cities);
         if(!$chosenCity) {
             $cityToDisplay = $cities[mt_rand(0, count($cities) - 1)];
             $this->addFlash('notice', 'choose one city please');
         } else {
             $cityToDisplay = $cities[$chosenCity];
         }
-        // fournir les données à la vue 
+
         return $this->render('main/beaches.html.twig', [
             'title' => 'Beaches',
             'widget_city' => $cityToDisplay
@@ -82,7 +79,6 @@ class MainController extends AbstractController {
 
         $cities = WeatherModel::getWeatherData();
 
-        // dd($cities);
         if(!$chosenCity) {
             $cityToDisplay = $cities[mt_rand(0, count($cities) - 1)];
             $this->addFlash('notice', 'choose one city please');
@@ -90,7 +86,6 @@ class MainController extends AbstractController {
             $cityToDisplay = $cities[$chosenCity];
         }
 
-        // fournir les données à la vue 
         return $this->render('main/mountains.html.twig', [
             'title' => 'Mountains',
             'widget_city' => $cityToDisplay
@@ -106,16 +101,15 @@ class MainController extends AbstractController {
     public function add(int $id, Request $request) :Response
     {
         $session = $request->getSession();
-        // save id of choosen city
+
         $chosenCity = $id;
-        // clear the rpeviosu chosen city
+
         $session->clear();
-        // put new city id
+
         $session->set('chosen_city', $chosenCity);
 
         $this->addFlash('success', 'City chosen');
 
-        // dd($session);
         return $this->redirectToRoute('homepage');
     }
 
