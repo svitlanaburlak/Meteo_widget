@@ -20,6 +20,7 @@ class MainController extends AbstractController {
     public function homepage(Request $request) :Response
     {
         $session = $request->getSession();
+        dump($session);
         // $session->clear();
         $chosenCity = $session->get('chosen_city');
         
@@ -55,7 +56,7 @@ class MainController extends AbstractController {
 
         if(!$chosenCity) {
             $cityToDisplay = $cities[mt_rand(0, count($cities) - 1)];
-            $this->addFlash('notice', 'choose one city please');
+            $this->addFlash('notice', 'Sélectionnez une ville');
         } else {
             $cityToDisplay = $cities[$chosenCity];
         }
@@ -81,7 +82,7 @@ class MainController extends AbstractController {
 
         if(!$chosenCity) {
             $cityToDisplay = $cities[mt_rand(0, count($cities) - 1)];
-            $this->addFlash('notice', 'choose one city please');
+            $this->addFlash('notice', 'Sélectionnez une ville');
         } else {
             $cityToDisplay = $cities[$chosenCity];
         }
@@ -102,13 +103,11 @@ class MainController extends AbstractController {
     {
         $session = $request->getSession();
 
-        $chosenCity = $id;
-
         $session->clear();
 
-        $session->set('chosen_city', $chosenCity);
+        $session->set('chosen_city', $id);
 
-        $this->addFlash('success', 'City chosen');
+        $this->addFlash('success', 'Votre ville');
 
         return $this->redirectToRoute('homepage');
     }

@@ -7,9 +7,9 @@
                     <p><img src="{{ asset('images/' ~ widget_city.weather ~ '.png') }}"></p>
                     <p>{{ widget_city.min }}°C / {{ widget_city.max }}°C</p>
                     {% for messages in app.flashes %}
-                    {% for message in messages %}
-                        <div>{{ message }}</div>
-                    {% endfor %}
+                        {% for message in messages %}
+                            <div>{{ message }}</div>
+                        {% endfor %}
                     {% endfor %}
                 </div>
             </div>

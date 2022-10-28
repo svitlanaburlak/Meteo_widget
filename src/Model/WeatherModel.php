@@ -34,7 +34,7 @@ class WeatherModel
      * @var [][] Forecast Array
      */
     private static $weatherData = [
-        [
+        1 => [
             'city' => 'Annecy',
             'weather' => 'snow',
             'date' => '29-01-2020',
@@ -42,7 +42,7 @@ class WeatherModel
             'max' => 2,
         ],
 
-        [
+        2 => [
             'city' => 'Biarritz',
             'weather' => 'rain',
             'date' => '29-01-2020',
@@ -50,7 +50,7 @@ class WeatherModel
             'max' => 0,
         ],
 
-        [
+        3 => [
             'city' => 'Bordeaux',
             'weather' => 'sun-cloud',
             'date' => '29-01-2020',
@@ -58,7 +58,7 @@ class WeatherModel
             'max' => 10,
         ],
 
-        [
+        4 => [
             'city' => 'Bruxelles',
             'weather' => 'storm',
             'date' => '29-01-2020',
@@ -66,7 +66,7 @@ class WeatherModel
             'max' => 5,
         ],
 
-        [
+        5 => [
             'city' => 'Chambéry',
             'weather' => 'sun-cloud',
             'date' => '29-01-2020',
@@ -74,7 +74,7 @@ class WeatherModel
             'max' => 6,
         ],
 
-        [
+        6 => [
             'city' => 'Grenoble',
             'weather' => 'snow',
             'date' => '29-01-2020',
@@ -82,7 +82,7 @@ class WeatherModel
             'max' => 3,
         ],
 
-        [
+        7 => [
             'city' => 'Lille',
             'weather' => 'clouds',
             'date' => '29-01-2020',
@@ -90,7 +90,7 @@ class WeatherModel
             'max' => 7,
         ],
 
-        [
+        8 => [
             'city' => 'Lyon',
             'weather' => 'snow',
             'date' => '29-01-2020',
@@ -98,7 +98,7 @@ class WeatherModel
             'max' => 12,
         ],
 
-        [
+        9 => [
             'city' => 'Marseille',
             'weather' => 'shower',
             'date' => '29-01-2020',
@@ -106,7 +106,7 @@ class WeatherModel
             'max' => 5,
         ],
 
-        [
+        10 => [
             'city' => 'Metz',
             'weather' => 'snow',
             'date' => '29-01-2020',
@@ -114,7 +114,7 @@ class WeatherModel
             'max' => 7,
         ],
 
-        [
+        11 => [
             'city' => 'Montpellier',
             'weather' => 'shower',
             'date' => '29-01-2020',
@@ -122,7 +122,7 @@ class WeatherModel
             'max' => 11,
         ],
 
-        [
+        12 => [
             'city' => 'Nantes',
             'weather' => 'sun-cloud',
             'date' => '29-01-2020',
@@ -130,7 +130,7 @@ class WeatherModel
             'max' => 6,
         ],
 
-        [
+        13 => [
             'city' => 'Nice',
             'weather' => 'snow',
             'date' => '29-01-2020',
@@ -138,7 +138,7 @@ class WeatherModel
             'max' => 3,
         ],
 
-        [
+        14 => [
             'city' => 'Paris',
             'weather' => 'shower',
             'date' => '29-01-2020',
@@ -146,7 +146,7 @@ class WeatherModel
             'max' => 11,
         ],
 
-        [
+        15 => [
             'city' => 'Rouen',
             'weather' => 'sun',
             'date' => '29-01-2020',
@@ -154,7 +154,7 @@ class WeatherModel
             'max' => 8,
         ],
 
-        [
+        16 => [
             'city' => 'Toulouse',
             'weather' => 'shower',
             'date' => '29-01-2020',
